@@ -6,10 +6,163 @@
 	</head>
 	<body bgcolor="#f4ee41">		
 		<ul class="nav navbar-nav topnav">
-						<a href="file:///C:/Users/Gyuri/Desktop/ProiectWeb/ProiectWebbb.html">Home</a>
-						<a href="file:///C:/Users/Gyuri/Desktop/ProiectWeb/Profile.html">Profile</a>
-						<a href="file:///C:/Users/Gyuri/Desktop/ProiectWeb/About.html">About</a>
-						<a href="file:///C:/Users/Gyuri/Desktop/ProiectWeb/Contact.html">Contact</a>
+						<a href="file:///C:/Users/Gyuri/Desktop/LaboratoareTehnologiiWeb/TehnologiiWebbb.html">Home</a>
+						<a href="file:///C:/Users/Gyuri/Desktop/LaboratoareTehnologiiWeb/Profile.html">Profile</a>
+						<a href="file:///C:/Users/Gyuri/Desktop/LaboratoareTehnologiiWeb/About.html">About</a>
+						<a href="file:///C:/Users/Gyuri/Desktop/LaboratoareTehnologiiWeb/Contact.html">Contact</a>
 		</ul>
 		<h1>About Page</h1>
+		
+		<p id="demo"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		
+		<script>
+			document.getElementById("demo").innerHTML = 5 + 6;
+		</script>
+		
+		<script>
+			document.write(5 + 6);
+		</script>
+		
+		<button type="button" onclick="document.write(5 + 6)">Try it</button>
+		
+		<script>
+			window.alert(5 + 6);
+		</script>
+		
+		<script>
+			console.log(5 + 6);
+		</script>
+		
+		<script>
+			var x, y;
+			x = 3;
+			y = 4;
+			console.log(x + y);
+		</script>
+		
+		<p id="demo2"></p>
+
+		<script>
+			var carName = "Volvo";
+			document.getElementById("demo3").innerHTML = carName; 
+		</script>
+		
+		<script>
+			var txt1 = "What a very ";
+			txt1 += "nice day!!!";
+			document.write(txt1);
+		</script>
+		
+		<script>
+			function toCelsius(fahrenheit) {
+			return (5/9) * (fahrenheit-32);
+			}
+			document.getElementById("demo4").innerHTML = toCelsius(77);
+		</script>
+		
+		<script>
+			function reverseString(str) {
+    
+				var splitString = str.split(""); 
+       
+				var reverseArray = splitString.reverse(); 
+      
+				var joinArray = reverseArray.join(""); 
+      
+				return joinArray; 
+			}
+ 
+			reverseString("hello");
+			console.log(reverseString("Hello!"));
+			document.getElementById("demo").innerHTML = reverseString("hello!");
+		</script>
+		
+		<script>
+			function remove_character(str, char_pos) 
+			{
+				part1 = str.substring(0, char_pos);
+				part2 = str.substring(char_pos + 1, str.length);
+				return (part1 + part2);
+			}
+			console.log(remove_character("Python",0));
+			console.log(remove_character("Python",3));
+			console.log(remove_character("Python",5));
+			document.getElementById("demo2").innerHTML = remove_character("hello!",3);
+		</script>
+		
+		<script>
+			var div;
+			function div37(div) {
+				if(div%3==0 || div%7==0)
+					{	
+						return true;
+					}
+				else{
+					return false;
+				}
+			}
+			console.log(div37(12)); 
+			console.log(div37(14)); 
+			console.log(div37(10)); 
+		</script>
+		
+		<script type="text/javascript">
+			var num1 = 100;
+			if(isNaN(num1)){
+				document.write(num1 + " is not a number <br/>");
+			}
+			else{
+				document.write(num1 + " is a number <br/>");
+			}
+ 
+			var str1 = "mkyong"
+			if(isNaN(str1)){
+				document.write(str1 + " is not a number <br/>");
+			}
+			else{
+				document.write(str1 + " is a number <br/>");
+			}
+		</script>
+		
+		<script>
+			var sum = [1,2,3].reduce(add, 0);
+			function add(a, b) {
+				return a + b;
+			}
+			
+			console.log(sum);
+			document.write(sum);
+		</script>
+		
+		<script>
+			function checkProp(obj, key) {
+				return obj != null && hasOwnProperty.call(obj, key);
+			}
+			console.log(checkProp({red: "red", green: "green", white: "white"}, "green"));
+			console.log(checkProp({red: "red", green: "green", white: "white"}, "black"));
+		</script>
+		
+		<script>
+			function romanize (num) {
+				if (isNaN(num))
+					return NaN;
+				var digits = String(+num).split(""),
+				key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+						"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+							"","I","II","III","IV","V","VI","VII","VIII","IX"],
+					roman = "",
+					i = 3;
+				while (i--)
+					roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+					return Array(+digits.join("") + 1).join("M") + roman;
+			}
+			console.log(romanize(1996));
+			document.write("1996=");
+			document.write(romanize(1996));
+		</script>
+		
+		
 	</body>
